@@ -4,7 +4,6 @@
     <About />
     <Skill />
     <ExperienceAndProjects />
-    <MainFooter />
   </div>
 </template>
 
@@ -13,7 +12,6 @@ import ModeButton from './components/ModeButton.vue'
 import About from './components/About.vue'
 import Skill from './components/Skill.vue'
 import ExperienceAndProjects from './components/ExperienceAndProjects.vue'
-import MainFooter from './components/MainFooter.vue'
 
 const MODE = {
   LIGHT: 'light',
@@ -26,7 +24,6 @@ export default {
     About,
     Skill,
     ExperienceAndProjects,
-    MainFooter,
   },
   created() {
     if (
