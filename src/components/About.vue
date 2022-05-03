@@ -50,7 +50,7 @@
           <font-awesome-icon :icon="['fab', 'github']" />
         </a>
       </div>
-      <a download class="btn-cv">Download CV</a>
+      <a href="public/cv.pdf" download class="btn-cv">Download CV</a>
     </div>
   </section>
 </template>
