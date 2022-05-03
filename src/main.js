@@ -9,8 +9,16 @@ import {
   faPhone,
 } from '@fortawesome/free-solid-svg-icons'
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faCirclePlay } from '@fortawesome/free-regular-svg-icons'
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-library.add(faCircleHalfStroke, faEnvelope, faPhone, faLinkedin, faGithub)
+library.add(
+  faCircleHalfStroke,
+  faEnvelope,
+  faPhone,
+  faLinkedin,
+  faGithub,
+  faCirclePlay
+)
 
 createApp(App).component('font-awesome-icon', FontAwesomeIcon).mount('#app')
