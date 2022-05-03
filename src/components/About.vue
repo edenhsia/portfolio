@@ -2,7 +2,7 @@
   <section>
     <div class="container">
       <div class="avatar">
-        <img src="https://picsum.photos/500/500?random=1" />
+        <img src="../assets/avatar.jpeg" alt="avatar" />
       </div>
       <div class="info text-center mb-4">
         <h1 class="font-medium text-2xl md:text-3xl">Eden Hsia</h1>
