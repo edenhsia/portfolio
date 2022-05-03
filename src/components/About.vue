@@ -5,7 +5,7 @@
         <img src="../assets/avatar.jpeg" alt="avatar" />
       </div>
       <div class="info text-center mb-4">
-        <h1 class="font-medium text-2xl md:text-3xl">Eden Hsia</h1>
+        <h1 class="font-medium text-2xl md:text-3xl">Tze-Yun Hsia</h1>
         <h2 class="mb-2 text-gray-800 dark:text-gray-100 md:text-lg">
           Front-end Developer
         </h2>
