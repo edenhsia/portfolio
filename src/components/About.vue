@@ -10,10 +10,10 @@
           Front-end Developer
         </h2>
         <p
-          class="text-sm max-w-lg mx-auto mb-3 text-gray-700 dark:text-gray-300"
+          class="text-sm max-w-xl mx-auto mb-3 tracking-wider text-gray-700 dark:text-gray-300"
         >
-          Front-end developer with 1.5 years of experience working with HTML /
-          CSS / JavaScript / Tailwind / Vue to build websites. Enjoying working
+          Front-end developer with 1.5 years of experience working with
+          HTML/CSS/JavaScript/Tailwind/Vue to build websites. Enjoying working
           with others to share ideas, find solutions and improve each other's
           skill.
         </p>
