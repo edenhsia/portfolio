@@ -3,6 +3,6 @@
 @tailwind utilities;
 
 body {
-  @apply py-10 bg-gray-50 text-gray-900 transition-all duration-300;
+  @apply py-10 bg-gray-50 text-gray-900 transition-colors duration-300;
   @apply dark:bg-gray-800 dark:text-white;
 }
