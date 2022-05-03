@@ -1,9 +1,9 @@
 <template>
-  <div class="space-y-12">
+  <div class="py-10 space-y-12">
     <ModeButton @switch="switchMode" />
     <About />
     <Skill />
-    <ExperienceAndProjects />
+    <ExperienceAndProjects class="pb-12" />
   </div>
 </template>
 
