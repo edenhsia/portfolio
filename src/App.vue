@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="space-y-12">
     <ModeButton @switch="switchMode" />
     <About />
     <Skill />
