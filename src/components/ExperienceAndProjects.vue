@@ -20,61 +20,63 @@
         </div>
       </div>
       <div class="max-w-xl mx-auto">
-        <ol v-if="activeTab === TAB.EXPERIENCE" class="experience space-y-6">
-          <li v-for="(exp, i) in experience" :key="i">
-            <time class="text-sm text-gray-700 dark:text-gray-300">
-              {{ exp.from }} - {{ exp.to }}
-            </time>
-            <h3 class="font-medium text-sky-500 mb-2">{{ exp.position }}</h3>
-            <ul
-              class="pl-4 space-y-1.5 border-l-4 border-gray-800 dark:border-gray-100"
-            >
-              <li
-                v-for="(des, i) in exp.description"
-                :key="`des-${i}`"
-                class="text-gray-800 dark:text-gray-100"
-              >
-                {{ des }}
-              </li>
-            </ul>
-          </li>
-        </ol>
-        <ul v-else class="projects space-y-6">
-          <li v-for="(project, i) in projects" :key="i">
-            <a :href="project.link" target="_blank" class="image mb-3">
-              <div class="responsive">
-                <img :src="project.image" alt="project screenshot" />
-                <span
-                  class="bg-gray-900/40 flex justify-center items-center transition-opacity duration-300 opacity-0 hover:opacity-100"
-                >
-                  <font-awesome-icon
-                    :icon="['fas', 'link']"
-                    class="text-white text-3xl"
-                  />
-                </span>
-              </div>
-            </a>
-            <div class="text">
-              <h3 class="font-medium mb-2">{{ project.name }}</h3>
-              <div class="skillset flex flex-wrap mb-2">
-                <span
-                  v-for="(skill, i) in project.skillset"
-                  :key="`skill-${i}`"
-                  class="rounded-full bg-sky-500 px-3 py-0.5 text-sm mr-2 mb-2 text-gray-50"
-                >
-                  {{ skill }}
-                </span>
-              </div>
+        <Transition name="fade" mode="out-in">
+          <ol v-if="activeTab === TAB.EXPERIENCE" class="experience space-y-6">
+            <li v-for="(exp, i) in experience" :key="i">
+              <time class="text-sm text-gray-700 dark:text-gray-300">
+                {{ exp.from }} - {{ exp.to }}
+              </time>
+              <h3 class="font-medium text-sky-500 mb-2">{{ exp.position }}</h3>
               <ul
                 class="pl-4 space-y-1.5 border-l-4 border-gray-800 dark:border-gray-100"
               >
-                <li v-for="(des, i) in project.description" :key="`des-${i}`">
+                <li
+                  v-for="(des, i) in exp.description"
+                  :key="`des-${i}`"
+                  class="text-gray-800 dark:text-gray-100"
+                >
                   {{ des }}
                 </li>
               </ul>
-            </div>
-          </li>
-        </ul>
+            </li>
+          </ol>
+          <ul v-else class="projects space-y-6">
+            <li v-for="(project, i) in projects" :key="i">
+              <a :href="project.link" target="_blank" class="image mb-3">
+                <div class="responsive">
+                  <img :src="project.image" alt="project screenshot" />
+                  <span
+                    class="bg-gray-900/40 flex justify-center items-center transition-opacity duration-300 opacity-0 hover:opacity-100"
+                  >
+                    <font-awesome-icon
+                      :icon="['fas', 'link']"
+                      class="text-white text-3xl"
+                    />
+                  </span>
+                </div>
+              </a>
+              <div class="text">
+                <h3 class="font-medium mb-2">{{ project.name }}</h3>
+                <div class="skillset flex flex-wrap mb-2">
+                  <span
+                    v-for="(skill, i) in project.skillset"
+                    :key="`skill-${i}`"
+                    class="rounded-full bg-sky-500 px-3 py-0.5 text-sm mr-2 mb-2 text-gray-50"
+                  >
+                    {{ skill }}
+                  </span>
+                </div>
+                <ul
+                  class="pl-4 space-y-1.5 border-l-4 border-gray-800 dark:border-gray-100"
+                >
+                  <li v-for="(des, i) in project.description" :key="`des-${i}`">
+                    {{ des }}
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </Transition>
       </div>
     </div>
   </section>
@@ -87,7 +89,7 @@ const TAB = {
 }
 
 export default {
-  data: () => ({ activeTab: TAB.PROJECTS }),
+  data: () => ({ activeTab: TAB.EXPERIENCE }),
   computed: {
     TAB: () => TAB,
     experience() {
