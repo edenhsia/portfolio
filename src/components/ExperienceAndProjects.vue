@@ -26,7 +26,9 @@
               <time class="text-sm text-gray-700 dark:text-gray-300">
                 {{ exp.from }} - {{ exp.to }}
               </time>
-              <h3 class="font-medium text-sky-500 mb-2">{{ exp.position }}</h3>
+              <h3 class="font-medium text-sky-500 mb-2">
+                {{ exp.position }} - {{ exp.company }}
+              </h3>
               <ul
                 class="pl-4 space-y-1.5 border-l-4 border-gray-800 dark:border-gray-100"
               >
@@ -95,7 +97,8 @@ export default {
     experience() {
       return [
         {
-          position: 'Freelance front-end developer',
+          position: 'Front-end developer',
+          company: 'Freelance',
           from: 'Mar. 2022',
           to: 'Present',
           description: [
@@ -105,6 +108,7 @@ export default {
         },
         {
           position: 'Front-end developer',
+          company: 'Fontech Co., Ltd',
           from: 'Sep. 2020',
           to: 'Feb. 2022',
           description: [
