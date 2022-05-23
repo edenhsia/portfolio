@@ -4,28 +4,7 @@
       <Tabs v-model:activeTab="activeTab" :tabs="TAB" />
       <div class="max-w-xl mx-auto">
         <Transition name="fade" mode="out-in">
-          <ol v-if="activeTab === TAB.EXPERIENCE" class="experience space-y-6">
-            <li v-for="(exp, i) in experience" :key="i">
-              <time class="text-sm text-gray-700 dark:text-gray-300">
-                {{ exp.from }} - {{ exp.to }}
-              </time>
-              <h3 class="font-medium text-sky-500 mb-2">
-                {{ exp.position }} - {{ exp.company }}
-              </h3>
-              <ul
-                class="pl-4 space-y-1.5 border-l-4 border-gray-800 dark:border-gray-100"
-              >
-                <li
-                  v-for="(des, i) in exp.description"
-                  :key="`des-${i}`"
-                  class="text-gray-800 dark:text-gray-100"
-                >
-                  {{ des }}
-                </li>
-              </ul>
-            </li>
-          </ol>
-          <ul v-else class="projects space-y-6">
+          <ul v-if="activeTab === TAB.PROJECTS" class="projects space-y-6">
             <li v-for="(project, i) in projects" :key="i">
               <a :href="project.link" target="_blank" class="image mb-3">
                 <div class="responsive">
@@ -61,6 +40,30 @@
               </div>
             </li>
           </ul>
+          <ul v-else class="space-y-8">
+            <li v-for="(pen, i) in codePen" :key="i">
+              <iframe
+                height="324"
+                style="width: 100%"
+                scrolling="no"
+                title="Playlist using  counter"
+                :src="`https://codepen.io/edenhsia/embed/${pen.id}?default-tab=result`"
+                frameborder="no"
+                loading="lazy"
+                allowtransparency="true"
+                allowfullscreen="true"
+                class="mb-3"
+              >
+                See the Pen
+                <a :href="`https://codepen.io/edenhsia/pen/${pen.id}`">
+                  Playlist using css counter
+                </a>
+                by Eden Hsia (<a href="https://codepen.io/edenhsia">@edenhsia</a
+                >) on <a href="https://codepen.io">CodePen</a>.
+              </iframe>
+              <h3 class="font-medium">{{ pen.name }}</h3>
+            </li>
+          </ul>
         </Transition>
       </div>
     </div>
@@ -71,41 +74,15 @@
 import Tabs from './Tabs.vue'
 
 const TAB = {
-  EXPERIENCE: 'Experience',
   PROJECTS: 'Projects',
+  CODE_PEN: 'Code Pen',
 }
 
 export default {
   components: { Tabs },
-  data: () => ({ activeTab: TAB.EXPERIENCE }),
+  data: () => ({ activeTab: TAB.PROJECTS }),
   computed: {
     TAB: () => TAB,
-    experience() {
-      return [
-        {
-          position: 'Front-end developer',
-          company: 'Freelance',
-          from: 'Mar. 2022',
-          to: 'Present',
-          description: [
-            'Built event website by using HTML/CSS/Bootstrap.',
-            'Built fundraising website by using HTML/CSS/Tailwind.',
-          ],
-        },
-        {
-          position: 'Front-end developer',
-          company: 'Fontech Co., Ltd',
-          from: 'Sep. 2020',
-          to: 'Feb. 2022',
-          description: [
-            'Built 17+ projects by using HTML/CSS/JavaScript/Tailwind/Vue/Nuxt.',
-            'Collaborated with UI/UX designers, back-end developers to design, build and improve web products.',
-            'Maintained/intergrated/rewrote older projects.',
-            'Discussed with teammates for problematic issues.',
-          ],
-        },
-      ]
-    },
     projects() {
       return [
         {
@@ -137,6 +114,26 @@ export default {
           skillset: ['HTML', 'CSS', 'RWD', 'JavaScript'],
           description: ['A simple template website.'],
           link: 'https://edenhsia.github.io/Webbplats',
+        },
+      ]
+    },
+    codePen() {
+      return [
+        {
+          id: 'YzeQwze',
+          name: 'Playlist using css counter',
+        },
+        {
+          id: 'yLOMRoa',
+          name: 'Circular timer animation',
+        },
+        {
+          id: 'XWZaYyY',
+          name: 'Progress bar',
+        },
+        {
+          id: 'KKmNVjZ',
+          name: 'Linear border animation',
         },
       ]
     },

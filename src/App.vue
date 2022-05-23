@@ -3,7 +3,7 @@
     <ModeButton @switch="switchMode" />
     <About />
     <SkillAndExperience />
-    <ExperienceAndProjects class="pb-12" />
+    <ProjectsAndCodePen class="pb-12" />
   </div>
 </template>
 
@@ -11,7 +11,7 @@
 import ModeButton from './components/ModeButton.vue'
 import About from './components/About.vue'
 import SkillAndExperience from './components/SkillAndExperience.vue'
-import ExperienceAndProjects from './components/ExperienceAndProjects.vue'
+import ProjectsAndCodePen from './components/ProjectsAndCodePen.vue'
 
 const MODE = {
   LIGHT: 'light',
@@ -23,7 +23,7 @@ export default {
     ModeButton,
     About,
     SkillAndExperience,
-    ExperienceAndProjects,
+    ProjectsAndCodePen,
   },
   created() {
     if (
