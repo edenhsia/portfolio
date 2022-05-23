@@ -47,7 +47,7 @@
                 style="width: 100%"
                 scrolling="no"
                 title="Playlist using  counter"
-                :src="`https://codepen.io/edenhsia/embed/${pen.id}?default-tab=result`"
+                :src="'https://codepen.io/edenhsia/embed/' + pen.id"
                 frameborder="no"
                 loading="lazy"
                 allowtransparency="true"
