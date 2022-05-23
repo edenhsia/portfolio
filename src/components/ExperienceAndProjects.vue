@@ -1,24 +1,7 @@
 <template>
   <section>
     <div class="container">
-      <div class="flex justify-center mb-5">
-        <div class="flex bg-gray-200 p-2 rounded-md space-x-2 dark:bg-gray-700">
-          <h2
-            @click="activeTab = TAB.EXPERIENCE"
-            class="btn-tab"
-            :class="{ active: activeTab === TAB.EXPERIENCE }"
-          >
-            Experience
-          </h2>
-          <h2
-            @click="activeTab = TAB.PROJECTS"
-            class="btn-tab"
-            :class="{ active: activeTab === TAB.PROJECTS }"
-          >
-            Projects
-          </h2>
-        </div>
-      </div>
+      <Tabs v-model:activeTab="activeTab" :tabs="TAB" />
       <div class="max-w-xl mx-auto">
         <Transition name="fade" mode="out-in">
           <ol v-if="activeTab === TAB.EXPERIENCE" class="experience space-y-6">
@@ -85,12 +68,15 @@
 </template>
 
 <script>
+import Tabs from './Tabs.vue'
+
 const TAB = {
-  EXPERIENCE: 'experience',
-  PROJECTS: 'projects',
+  EXPERIENCE: 'Experience',
+  PROJECTS: 'Projects',
 }
 
 export default {
+  components: { Tabs },
   data: () => ({ activeTab: TAB.EXPERIENCE }),
   computed: {
     TAB: () => TAB,
