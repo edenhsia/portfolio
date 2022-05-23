@@ -2,7 +2,7 @@
   <div class="py-10 space-y-12">
     <ModeButton @switch="switchMode" />
     <About />
-    <Skill />
+    <SkillAndExperience />
     <ExperienceAndProjects class="pb-12" />
   </div>
 </template>
@@ -10,7 +10,7 @@
 <script>
 import ModeButton from './components/ModeButton.vue'
 import About from './components/About.vue'
-import Skill from './components/Skill.vue'
+import SkillAndExperience from './components/SkillAndExperience.vue'
 import ExperienceAndProjects from './components/ExperienceAndProjects.vue'
 
 const MODE = {
@@ -22,7 +22,7 @@ export default {
   components: {
     ModeButton,
     About,
-    Skill,
+    SkillAndExperience,
     ExperienceAndProjects,
   },
   created() {
