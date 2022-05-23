@@ -142,15 +142,6 @@ export default {
 </script>
 
 <style scoped>
-.btn-tab {
-  @apply p-3 rounded-md text-lg font-medium transition-all duration-300 cursor-pointer md:px-10;
-
-  &:hover,
-  &.active {
-    @apply bg-gray-50 dark:bg-gray-800;
-  }
-}
-
 .projects .image {
   @apply block w-full rounded-2xl overflow-hidden;
 
